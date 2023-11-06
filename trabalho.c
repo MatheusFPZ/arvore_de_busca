@@ -8,7 +8,7 @@
 // Estrutura para representar um nó da árvore
 typedef struct TreeNode {
     char name[256];
-    char location[256];
+    char location[566];
     unsigned long size;
     struct TreeNode *left;
     struct TreeNode *right;
@@ -108,14 +108,13 @@ void searchAndPrintAll(TreeNode *root, const char *fileName) {
         printf("Nome: %s\n", root->name);
         printf("Localização: %s\n", root->location);
         printf("Tamanho: %lu bytes\n", root->size);
-
-        do:
+ }
+        
     searchAndPrintAll(root->left, fileName);
     searchAndPrintAll(root->right, fileName);
         
         
-        while();
-    }
+   
 
     // Continue a pesquisa nas subárvores direita e esquerda, pois pode haver mais correspondências
     
@@ -124,7 +123,7 @@ void searchAndPrintAll(TreeNode *root, const char *fileName) {
 
 int main() {
     TreeNode *root = NULL;
-    const char *folderPath = "/media/linux/5CF4276DF427491A/Windows"; // Substitua pelo caminho da pasta pai
+    const char *folderPath = "/media/linux/5CF4276DF427491A/Contabil"; // Substitua pelo caminho da pasta pai
 
     scanFolder(folderPath, &root);
     
@@ -140,10 +139,12 @@ int main() {
     printf("\n//////////buscando///////////");
     searchAndPrintAll(root, nome);
     
-    
    
     }
     freeTree(root);
 
     return 0;
+    
 }
+
+
